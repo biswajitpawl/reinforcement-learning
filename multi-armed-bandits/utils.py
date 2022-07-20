@@ -1,5 +1,3 @@
-import numpy as np
-
 def argmax(values):
     max_val = values[0]
     best_actions = [0]
@@ -12,6 +10,6 @@ def argmax(values):
     return np.random.choice(best_actions)
 
 def softmax(vals):
-    max_val = np.amax(vals)
-    exps = np.exp(vals - max_val)
-    return exps / np.sum(exps)
+  max_val = np.amax(vals)
+  exps = np.exp(vals - max_val)
+  return exps / np.sum(exps)
