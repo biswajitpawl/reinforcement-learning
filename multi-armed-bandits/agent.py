@@ -3,11 +3,13 @@ from utils import argmax, softmax
 
 class Agent:
     
-    def __init__(self, arms, strategy, **params):
+    def __init__(self, arms, strategy, init_val=0., **params):
         self.arms = arms
         self.strategy = strategy
+        self.init_val = init_val
         self.params = params
-        self.estimates = np.full(arms, params['init_val']) if 'init_val' in self.params else np.zeros(arms)
+        
+        self.estimates = np.full(arms, init_val)
         self.action_counts = np.zeros(arms)
         self.prob = None
         self.rewards_sum = 0.
@@ -35,7 +37,6 @@ class Agent:
             action = np.random.choice(self.arms, p=self.prob)
         
         self.action_counts[action] += 1
-        
         return action
 
     def update_estimate(self, reward, action):
@@ -46,7 +47,7 @@ class Agent:
         elif self.strategy == 'gradient':
             step_size = self.params['step_size']
             delta = reward
-            baseline = self.params['baseline']
+            baseline = self.params['baseline'] if 'baseline' in self.params else True
             if baseline:
                 self.rewards_sum += reward
                 total_steps = np.sum(self.action_counts)
@@ -57,6 +58,6 @@ class Agent:
             self.estimates[action+1:] -= step_size * delta * self.prob[action+1:]
 
     def reset(self):
-        self.estimates[:] = self.params['init_val'] if 'init_val' in self.params else 0.
+        self.estimates[:] = self.init_val
         self.rewards_sum = 0.
         self.action_counts[:] = 0
