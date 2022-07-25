@@ -34,7 +34,8 @@ class Environment:
 
                 # Store avg. reward at each time-step/pull
                 # rewards_sum += reward
-                scores.append(reward) #(rewards_sum/(p+1))
+                # scores.append(rewards_sum/(p+1))
+                scores.append(reward)
                 
                 # Store total no. of optimal actions chosen (over iterations/experiments) at each time-step/pull
                 if action == self.testbed.optimal_action:
