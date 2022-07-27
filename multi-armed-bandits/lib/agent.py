@@ -1,5 +1,5 @@
 import numpy as np
-from utils import argmax, softmax
+from .utils import argmax, softmax
 
 class Agent:
     
@@ -18,7 +18,7 @@ class Agent:
         if self.strategy == 'epsilon_greedy':
             epsilon = self.params['epsilon']
             if np.random.random_sample() < epsilon:
-                action = np.random.randint(self.arms) # Explore
+                action = np.random.choice(self.arms) # Explore
             else:
                 action = argmax(self.estimates) # Exploit
         
