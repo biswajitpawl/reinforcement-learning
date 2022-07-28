@@ -44,12 +44,9 @@ class Environment:
                     optimal_counts[p] += 1
                     
             scores_avg.append(scores)
-                
-        print()
         
         scores_avg = np.mean(scores_avg, axis=0)
         optimal_counts /= self.iterations
-        
         return scores_avg, optimal_counts*100
     
     def reset(self, testbed):
