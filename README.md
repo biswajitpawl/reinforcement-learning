@@ -5,7 +5,7 @@ created: '2022-08-01T09:23:51.904Z'
 modified: '2022-08-03T21:33:20.241Z'
 ---
 
-## <center>Reinforcement Learning
+## <center>Reinforcement Learning</center>
 
 `CODE`: [`My RL repo`](https://github.com/biswajitpawl/reinforcement-learning)
 
