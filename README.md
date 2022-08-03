@@ -1,46 +1,51 @@
-# Reinforcement Learning
-
+---
+tags: [Notebooks]
+title: Reinforcement Learning
+created: '2022-08-01T09:23:51.904Z'
+modified: '2022-08-03T21:33:20.241Z'
 ---
 
-`CODE`: `[My RL repo](https://github.com/biswajitpawl/reinforcement-learning)`
+## <center>Reinforcement Learning
 
-### What is Reinforcement Learning?
+`CODE`: [`My RL repo`](https://github.com/biswajitpawl/reinforcement-learning)
 
-`UAlberta`
-
-- [week 1] Sequential decision making with evaluative feedback
-- [week 3] Problem formulation for sequential decision making under uncertainty
-- `GOAL`: To maximize future rewards (in expectation) (check Reward Hypothesis)
-
-### How is it different from supervised learning?
+#### <mark>What is Reinforcement Learning?
 
 `UAlberta`
+* [week 1] Sequential decision making with evaluative feedback
+* [week 3] Problem formulation for sequential decision making under uncertainty
+* `GOAL`: To maximize future rewards (in expectation) (check Reward Hypothesis)
 
-- Agent generates its own data by interacting with the world (environment). [Data is not given to the model]
-- Agent learns consequence of its own actions through trial and error (evaluation) rather than being told the correct action. [In SL, we provide data with correct labels/answers]
+#### <mark>How is it different from supervised learning?
 
-`[Lex](https://youtu.be/zR11FLZ-O9M)`
+`UAlberta`
+* Agent generates its own data by interacting with the world (environment). [Data is not given to the model]
+* Agent learns consequence of its own actions through trial and error (evaluation) rather than being told the correct action. [In SL, we provide data with correct labels/answers]
 
-- `SL` teaching/learning by example, `RL`: teaching/learning by experience
+[`Lex`][1]
 
-### How is related to (and different from) Control Theory?
+* `SL` teaching/learning by example, `RL`: teaching/learning by experience
+
+#### <mark>How is related to (and different from) Control Theory?
 
 `Steve Brunton`
+* RL is at the sweet-spot between Control Theory and Machine Learning.
+* RL is a branch of ML which essentially deals with how to **learn control strategies** to **interact with a complex environment**. (collects experience)
+* *Biologically inspired* idea - Through `trial and error` `+ve/-ve reward signals and feedback`, animals learn how to interact with the environment.
 
-- RL is at the sweet-spot between Control Theory and Machine Learning.
-- RL is a branch of ML which essentially deals with how to **learn control strategies** to **interact with a complex environment**. (collects experience)
-- Biologically inspired idea - Through `trial and error` `+ve/-ve reward signals and feedback`, animals learn how to interact with the environment.
-
-```mermaid
-graph LR
-	A[AGENT] ---> |Action, a| B[ENVIRONMENT]
-	B -.-> |Reward, r| A
-	B --> |State, s| A
-```
-
+<p align='center'><img src='./rl-1.png' alt='rl diagram' style='right' width='400'/></p>
+ 
 `TODO`
+* [ ] Check rl book
+* [ ] Google on this
 
-- [ ]  Check RL book
-- [ ]  Google on this
+Multi-armed bandits
+-------------------
 
-### Multi-armed bandits
+[1]: https://youtu.be/zR11FLZ-O9M
+
+
+
+
+
+
